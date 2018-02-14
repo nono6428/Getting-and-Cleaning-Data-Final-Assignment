@@ -27,6 +27,6 @@ tidydataset <- function (working_directory) {
      library(reshape2)
      temp <- melt(full_dataset, id = extra_names, measure.vars = desired_feature_names) #create a narrow dataset
      tidy_dataset <- aggregate(value ~ activity + subject, data = temp, mean) #returns the tidy dataset
-     write.table(tidy_dataset, file = "tidy dataset.txt")
+     write.table(tidy_dataset, file = "tidy dataset.txt",row.names = FALSE)
      return(tidy_dataset)
 }
